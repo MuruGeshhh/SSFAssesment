@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main page</title>
+</head>
+<body>
+<form method="POST" action="/articles">
+    <H1>Crypto News of the Day</H1>    <button type="submit" >Save</button>
+
+
+    
+    <div data-th-each="w: ${hello}">
+        <table>
+            <tr>
+
+                <td style="width: 30%;">
+                    <img data-th-src="${w.imageurl}" alt="">
+                </td>
+                
+                <td>
+
+                    <h2>id:  </h2>
+                    <strong data-th-text="${w.id}"></strong>
+                    <input type="hidden" name="id" size="1" value="${w.id}">
+
+
+
+                    <h2>title: </h2>
+                    <strong data-th-text="${w.title}"></strong>
+                    <input type="hidden" name="title" size="1" value="${w.title}">
+
+                    <h2>body: </h2>
+                    <strong data-th-text="${w.body}"></strong>
+                    <input type="hidden" name="body" size="1" value="${w.body}">
+
+
+                    <h2>tags: </h2>
+                    <strong data-th-text="${w.tags}"></strong>
+                    <input type="hidden" name="tags" size="1" value="${w.tags}">
+
+                    <h2>url: </h2>
+                    <a th:href="${w.url}" th:text="${w.url}" target="_blank"></a>
+                    <input type="hidden" name="url" size="1" value="${w.url}">
+
+                    <h2>Published on: </h2>
+                    <strong data-th-text="${w.published_on}"></strong>
+                    <input type="hidden" name="published_on" size="1" value="${w.published_on}">
+
+                    <h2>save:</h2>
+                    <input type="checkbox" value="false">
+
+                    <br><br>
+
+                    
+
+ 
+                    
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    </form>
+</body>
+</html>
